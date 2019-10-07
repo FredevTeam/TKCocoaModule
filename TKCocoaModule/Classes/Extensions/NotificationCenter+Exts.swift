@@ -10,16 +10,16 @@ import Foundation
 
 extension TypeWrapperProtocol where WrappedType == NotificationCenter {
 
-    static func send(_ name: Notification.Name) {
+    public static func send(_ name: Notification.Name) {
         self.WrappedType.default.post(name: name, object: nil, userInfo: nil)
     }
 
-    static func receive(_ name: Notification.Name, target: Any, selector:Selector, object: Any? = nil) {
+    public static func receive(_ name: Notification.Name, target: Any, selector:Selector, object: Any? = nil) {
         self.WrappedType.default.addObserver(target, selector: selector, name: name, object: object)
     }
 
 
-    static func reset(_ name: Notification.Name, target: Any, object: Any? = nil) {
+    public static func reset(_ name: Notification.Name, target: Any, object: Any? = nil) {
         self.WrappedType.default.removeObserver(target, name: name, object: object)
     }
 }

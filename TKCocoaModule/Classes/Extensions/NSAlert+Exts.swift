@@ -19,7 +19,7 @@ extension TypeWrapperProtocol where WrappedType == NSAlert {
     ///   - information: information description
     ///   - titles: titles description
     ///   - complation: complation description
-    static func alert(stlye:NSAlert.Style,
+    public static func alert(stlye:NSAlert.Style,
                       message: String,
                       information:String,
                       button titles:[String], complation:@escaping (Bool) ->Void) {

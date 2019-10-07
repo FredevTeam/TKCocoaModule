@@ -29,7 +29,7 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform = :osx
-  s.osx.deployment_target = "10.10"
+  s.osx.deployment_target = "10.12"
 
   s.source_files = 'TKCocoaModule/Classes/**/*'
 

@@ -9,20 +9,6 @@
 import Cocoa
 
 extension TypeWrapperProtocol where WrappedType == NSView {
-    public var backgroundColor: NSColor? {
-        get {
-            if let colorRef = self.wrappedValue.layer?.backgroundColor {
-                return NSColor(cgColor: colorRef)
-            } else {
-                return nil
-            }
-        }
-        set {
-            self.wrappedValue.wantsLayer = true
-            self.wrappedValue.layer?.backgroundColor = newValue?.cgColor
-        }
-    }
-
 
     public func removeAllSubviews() {
         self.wrappedValue.subviews.forEach { (v) in
@@ -55,8 +41,27 @@ extension TypeWrapperProtocol where WrappedType == NSView {
 }
 
 extension NSView {
+    public var backgroundColor: NSColor? {
+        get {
+            if let colorRef = self.layer?.backgroundColor {
+                return NSColor(cgColor: colorRef)
+            } else {
+                return nil
+            }
+        }
+        set {
+            self.wantsLayer = true
+            self.layer?.backgroundColor = newValue?.cgColor
+        }
+    }
+
+
+}
+
+
+extension NSView {
     // x
-    var x : CGFloat {
+    public var x : CGFloat {
 
         get {
 
@@ -72,7 +77,7 @@ extension NSView {
     }
 
     // y
-    var y : CGFloat {
+    public var y : CGFloat {
 
         get {
 
@@ -88,7 +93,7 @@ extension NSView {
     }
 
     // height
-    var height : CGFloat {
+    public var height : CGFloat {
 
         get {
 
@@ -104,7 +109,7 @@ extension NSView {
     }
 
     // width
-    var width : CGFloat {
+    public var width : CGFloat {
 
         get {
 
@@ -120,7 +125,7 @@ extension NSView {
     }
 
     // left
-    var left : CGFloat {
+    public var left : CGFloat {
 
         get {
 
@@ -134,7 +139,7 @@ extension NSView {
     }
 
     // right
-    var right : CGFloat {
+    public var right : CGFloat {
 
         get {
 
@@ -148,7 +153,7 @@ extension NSView {
     }
 
     // top
-    var top : CGFloat {
+    public var top : CGFloat {
 
         get {
 
@@ -162,7 +167,7 @@ extension NSView {
     }
 
     // bottom
-    var bottom : CGFloat {
+    public var bottom : CGFloat {
 
         get {
 
@@ -175,7 +180,7 @@ extension NSView {
         }
     }
 
-    var middleX : CGFloat {
+    public var middleX : CGFloat {
 
         get {
 
@@ -183,7 +188,7 @@ extension NSView {
         }
     }
 
-    var middleY : CGFloat {
+    public var middleY : CGFloat {
 
         get {
 
@@ -191,7 +196,7 @@ extension NSView {
         }
     }
 
-    var middlePoint : CGPoint {
+    public var middlePoint : CGPoint {
 
         get {
 
@@ -199,13 +204,13 @@ extension NSView {
         }
     }
 
-    var maxX: CGFloat {
+    public var maxX: CGFloat {
         get {
             return frame.maxX
         }
     }
 
-    var maxY: CGFloat {
+    public var maxY: CGFloat {
         get {
             return frame.maxY
         }

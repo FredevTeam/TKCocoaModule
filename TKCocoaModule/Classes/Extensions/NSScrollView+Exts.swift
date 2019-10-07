@@ -12,7 +12,7 @@ import Cocoa
 
 extension TypeWrapperProtocol where WrappedType == NSScrollView {
     
-    private func transparentizeHeaderClipView() {
+    public func transparentizeHeaderClipView() {
 
         let clips = self.wrappedValue.subviews.compactMap { $0 as? NSClipView }
         guard let headclip = clips.filter({ $0 !== self.wrappedValue.contentView }).first,

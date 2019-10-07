@@ -14,7 +14,7 @@ extension NSView {
         static var UserInterface = "com.taokan.userinterface"
     }
 
-    var userInteractionEnabled: Bool  {
+    public var userInteractionEnabled: Bool  {
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.UserInterface) as? Bool ?? true
         }

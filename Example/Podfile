@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'TKCocoaModule_Example' do
+  pod 'TKCocoaModule', :path => '../'
+
+  target 'TKCocoaModule_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

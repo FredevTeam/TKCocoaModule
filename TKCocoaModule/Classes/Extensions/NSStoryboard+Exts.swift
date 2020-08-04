@@ -19,10 +19,10 @@ extension TypeWrapperProtocol where WrappedType == NSStoryboard {
     }
 
     public static func viewController(name: String, storyboard from: NSStoryboard.Name, bundle: Bundle? = nil) -> NSViewController? {
-        return NSStoryboard.init(name: from, bundle: bundle).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: name)) as? NSViewController
+        return NSStoryboard.init(name: NSStoryboard.Name(rawValue: name), bundle: bundle).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init(name)) as? NSViewController
     }
 
     public static func windowController(name: String, storyboard from: NSStoryboard.Name, bundle: Bundle? = nil) -> NSWindowController? {
-        return NSStoryboard.init(name: from, bundle: bundle).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: name)) as? NSWindowController
+        return NSStoryboard.init(name: from, bundle: bundle).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(name)) as? NSWindowController
     }
 }

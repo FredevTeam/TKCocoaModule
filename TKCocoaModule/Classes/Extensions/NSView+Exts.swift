@@ -67,10 +67,8 @@ extension NSView {
             self.layer?.backgroundColor = newValue?.cgColor
         }
     }
-
-
-    
 }
+
 
 
 extension NSView {

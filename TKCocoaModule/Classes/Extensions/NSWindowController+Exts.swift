@@ -11,7 +11,7 @@ import Cocoa
 extension TypeWrapperProtocol where WrappedType == NSWindowController {
 
     public static func show(name: String, storyboard: String = "Main", complation:((_ windowController: NSWindowController?) ->Void)) {
-              guard let controller = NSStoryboard.cocoa.windowController(name: name, storyboard: storyboard) else {
+        guard let controller = NSStoryboard.cocoa.windowController(name: name, storyboard: NSStoryboard.Name(rawValue: storyboard)) else {
                   complation(nil)
                     return
               }

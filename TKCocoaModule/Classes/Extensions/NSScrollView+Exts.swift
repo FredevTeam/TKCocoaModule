@@ -42,6 +42,37 @@ extension TypeWrapperProtocol where WrappedType == NSScrollView {
             }
         }
     }
+    
+    public func scrollBottom() {
+
+    //        self.enclosingScrollView?.lineScroll = 0.0
+    //        self.enclosingScrollView?.pageScroll = 0.0
+    //
+    //        var scrollLocation = self.enclosingScrollView?.contentView.bounds.origin.y ?? 0.0 + 10.0
+    //        let  maxScroll = (self.enclosingScrollView?.documentView?.bounds.size.height ?? 0.0) - (self.enclosingScrollView?.documentVisibleRect.size.height ?? 0.0)
+    //
+    //        scrollLocation += maxScroll
+    //
+    //        if scrollLocation < 0 {
+    //            scrollLocation = 0
+    //        }else if (scrollLocation > maxScroll) {
+    //            scrollLocation = maxScroll
+    //        }
+    //        guard let scrollView = self.enclosingScrollView else {
+    //            return
+    //        }
+    //
+    //        scrollView.contentView.scroll(NSPoint.init(x: 0, y: scrollLocation))
+    //        scrollView.reflectScrolledClipView(scrollView.contentView)
+
+        let scrolledToBottom = NSMaxY(self.wrappedValue.visibleRect) != NSMaxY(self.wrappedValue.bounds)
+            if (scrolledToBottom) {
+                self.wrappedValue.scrollToEndOfDocument(self)
+            } else {
+                self.wrappedValue.scroll(self.wrappedValue.visibleRect.origin)
+            }
+
+        }
 }
 
 

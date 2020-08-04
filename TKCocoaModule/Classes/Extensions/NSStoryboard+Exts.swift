@@ -10,19 +10,19 @@ import Cocoa
 
 extension TypeWrapperProtocol where WrappedType == NSStoryboard {
 
-    public static func viewController(from storyboard: String, bundle: Bundle? = nil) -> NSViewController? {
+    public static func viewController(from storyboard: NSStoryboard.Name, bundle: Bundle? = nil) -> NSViewController? {
         return NSStoryboard.init(name: storyboard, bundle: bundle).instantiateInitialController() as? NSViewController
     }
 
-    public static func windowController(from storyboard: String, bundle: Bundle? = nil) -> NSWindowController? {
+    public static func windowController(from storyboard: NSStoryboard.Name, bundle: Bundle? = nil) -> NSWindowController? {
         return NSStoryboard.init(name: storyboard, bundle: bundle).instantiateInitialController() as? NSWindowController
     }
 
-    public static func viewController(name: String, storyboard from: String, bundle: Bundle? = nil) -> NSViewController? {
-        return NSStoryboard.init(name: from, bundle: bundle).instantiateController(withIdentifier: name) as? NSViewController
+    public static func viewController(name: String, storyboard from: NSStoryboard.Name, bundle: Bundle? = nil) -> NSViewController? {
+        return NSStoryboard.init(name: NSStoryboard.Name(rawValue: name), bundle: bundle).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init(name)) as? NSViewController
     }
 
-    public static func windowController(name: String, storyboard from: String, bundle: Bundle? = nil) -> NSWindowController? {
-        return NSStoryboard.init(name: from, bundle: bundle).instantiateController(withIdentifier: name) as? NSWindowController
+    public static func windowController(name: String, storyboard from: NSStoryboard.Name, bundle: Bundle? = nil) -> NSWindowController? {
+        return NSStoryboard.init(name: from, bundle: bundle).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(name)) as? NSWindowController
     }
 }

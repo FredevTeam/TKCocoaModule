@@ -57,4 +57,18 @@ extension NSView {
         }
     }
 
+    
+    public func animationUpdateContraints(duration: TimeInterval = 0.25, complation:(() ->Void)? = nil) {
+        NSAnimationContext.runAnimationGroup({ (context) in
+            context.duration = duration
+            context.allowsImplicitAnimation = true
+            self.needsUpdateConstraints = true
+            self.updateConstraintsForSubtreeIfNeeded()
+            self.layoutSubtreeIfNeeded()
+        }) {
+            complation?()
+        }
+    }
+    
 }
+

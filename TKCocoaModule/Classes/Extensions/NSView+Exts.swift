@@ -38,6 +38,19 @@ extension TypeWrapperProtocol where WrappedType == NSView {
         return NSPointInRect(point, self.wrappedValue.visibleRect)
     }
 
+    
+    /// 判断 view 是否相交
+    /// - Parameter view: 目标view
+    /// - Returns: 结果
+    public func intersect(with view: NSView) -> Bool {
+        let window = self.wrappedValue.window
+        
+        let selfRect = self.wrappedValue.convert(self.wrappedValue.bounds, to: window?.contentView)
+        let viewRect = view.convert(view.bounds, to: window?.contentView)
+        return selfRect.intersects(viewRect)
+    }
+    
+    
 }
 
 extension NSView {
@@ -54,9 +67,8 @@ extension NSView {
             self.layer?.backgroundColor = newValue?.cgColor
         }
     }
-
-
 }
+
 
 
 extension NSView {

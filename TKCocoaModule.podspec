@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
   s.platform = :osx
   s.osx.deployment_target = "10.12"
 
+  s.swift_version = '4.2'
   s.source_files = 'TKCocoaModule/Classes/**/*'
 
   # s.resource_bundles = {

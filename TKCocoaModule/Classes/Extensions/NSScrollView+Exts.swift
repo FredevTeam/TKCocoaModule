@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 
 
-extension TypeWrapperProtocol where WrappedType == NSScrollView {
+extension TypeWrapperProtocol where WrappedType: NSScrollView {
     
     public func transparentizeHeaderClipView() {
 
@@ -29,7 +29,7 @@ extension TypeWrapperProtocol where WrappedType == NSScrollView {
     }
 }
 
-extension TypeWrapperProtocol where WrappedType == NSScrollView {
+extension TypeWrapperProtocol where WrappedType: NSScrollView {
 
     /// Scroll to the ducument view top.
     public func scrollToTop() {

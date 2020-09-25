@@ -8,7 +8,7 @@
 import Cocoa
 
 
-extension TypeWrapperProtocol where WrappedType == NSStoryboard {
+extension TypeWrapperProtocol where WrappedType: NSStoryboard {
 
     public static func viewController(from storyboard: NSStoryboard.Name, bundle: Bundle? = nil) -> NSViewController? {
         return NSStoryboard.init(name: storyboard, bundle: bundle).instantiateInitialController() as? NSViewController
@@ -19,7 +19,7 @@ extension TypeWrapperProtocol where WrappedType == NSStoryboard {
     }
 
     public static func viewController(name: String, storyboard from: NSStoryboard.Name, bundle: Bundle? = nil) -> NSViewController? {
-        return NSStoryboard.init(name: NSStoryboard.Name(rawValue: name), bundle: bundle).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init(name)) as? NSViewController
+        return NSStoryboard.init(name: NSStoryboard.Name(name), bundle: bundle).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier.init(name)) as? NSViewController
     }
 
     public static func windowController(name: String, storyboard from: NSStoryboard.Name, bundle: Bundle? = nil) -> NSWindowController? {

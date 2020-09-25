@@ -8,7 +8,7 @@
 
 import Cocoa
 
-extension TypeWrapperProtocol where WrappedType == NSUserNotification {
+extension TypeWrapperProtocol where WrappedType: NSUserNotification {
 //    let notification = NSUserNotification()
 //    notification.identifier = "unique-id"
 //    notification.title = "Hello"

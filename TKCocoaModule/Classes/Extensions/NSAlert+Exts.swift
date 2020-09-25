@@ -9,7 +9,7 @@
 import Cocoa
 
 
-extension TypeWrapperProtocol where WrappedType == NSAlert {
+extension TypeWrapperProtocol where WrappedType:NSAlert {
 
     /// alert
     ///

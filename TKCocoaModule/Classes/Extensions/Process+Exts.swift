@@ -20,7 +20,7 @@ import Cocoa
 
 
 // MARK: - Open
-extension TypeWrapperProtocol where WrappedType == Process {
+extension TypeWrapperProtocol where WrappedType: Process {
     /// 打开APP
     ///
     /// - Parameter path: 可执行文件路径

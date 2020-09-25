@@ -1,0 +1,16 @@
+PODS:
+  - TKCocoaModule (0.1.0)
+
+DEPENDENCIES:
+  - TKCocoaModule (from `../`)
+
+EXTERNAL SOURCES:
+  TKCocoaModule:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TKCocoaModule: af00f2160fa679524e30263bb750884f54bcbac5
+
+PODFILE CHECKSUM: 6570315c02a1a43f62f8aaf26b7aad5cdc67ae4f
+
+COCOAPODS: 1.9.1

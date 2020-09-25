@@ -9,7 +9,7 @@ import AppKit
 import Foundation
 
 
-extension TypeWrapperProtocol where WrappedType == NSColor {
+extension TypeWrapperProtocol where WrappedType: NSColor {
     /// 随机色
     public static var randomColor: NSColor {
         get

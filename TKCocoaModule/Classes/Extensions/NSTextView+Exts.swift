@@ -7,6 +7,6 @@
 
 import Foundation
 
-extension TypeWrapperProtocol where WrappedType == NSTextView {
+extension TypeWrapperProtocol where WrappedType: NSTextView {
     
 }

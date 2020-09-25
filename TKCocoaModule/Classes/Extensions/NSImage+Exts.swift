@@ -7,7 +7,7 @@
 
 import Cocoa
 
-extension TypeWrapperProtocol where WrappedType == NSImage {
+extension TypeWrapperProtocol where WrappedType: NSImage {
     
     
     public func image(with opacity: Float) -> NSImage {
@@ -54,7 +54,7 @@ extension TypeWrapperProtocol where WrappedType == NSImage {
     }
 }
 
-extension TypeWrapperProtocol where WrappedType == NSImage {
+extension TypeWrapperProtocol where WrappedType: NSImage {
     
     /// 缩放
     /// - Parameter size: 目标大小

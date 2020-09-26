@@ -8,6 +8,6 @@
 import Cocoa
 
 
-extension TypeWrapperProtocol where WrappedType == NSPasteboard {
+extension TypeWrapperProtocol where WrappedType: NSPasteboard {
 
 }

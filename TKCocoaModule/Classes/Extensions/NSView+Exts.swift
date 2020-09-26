@@ -8,7 +8,7 @@
 
 import Cocoa
 
-extension TypeWrapperProtocol where WrappedType == NSView {
+extension TypeWrapperProtocol where WrappedType: NSView {
 
     public func removeAllSubviews() {
         self.wrappedValue.subviews.forEach { (v) in
@@ -229,3 +229,7 @@ extension NSView {
     }
 
 }
+
+
+
+

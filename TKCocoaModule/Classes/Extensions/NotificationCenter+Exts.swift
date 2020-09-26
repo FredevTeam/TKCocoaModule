@@ -8,7 +8,7 @@
 import Foundation
 
 
-extension TypeWrapperProtocol where WrappedType == NotificationCenter {
+extension TypeWrapperProtocol where WrappedType:NotificationCenter {
 
     public static func send(_ name: Notification.Name) {
         self.WrappedType.default.post(name: name, object: nil, userInfo: nil)

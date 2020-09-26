@@ -9,7 +9,7 @@
 import Cocoa
 
 
-extension TypeWrapperProtocol where WrappedType == NSApplication {
+extension TypeWrapperProtocol where WrappedType: NSApplication {
 
     /// geit UUID
     ///

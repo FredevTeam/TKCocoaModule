@@ -22,4 +22,14 @@ extension TypeWrapperProtocol where WrappedType: NSViewController {
             complation?()
         } 
     }
+    
+    
+    var document: NSDocument? {
+        if let doc = NSDocumentController.shared.currentDocument {
+            return doc
+        }else {
+            return self.wrappedValue.view.window?.windowController?.document as? NSDocument
+        }
+    }
+
 }
